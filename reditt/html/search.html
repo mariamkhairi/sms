@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title >Social</title>
+    <link rel="stylesheet"  href="../css/cs.css">
+    <link rel="stylesheet" type="text/css" href="../css/search.css">
+    <link rel="icon"  href="../photo/logo.jpeg">
+    </head>
+    
+</head>
+  
+<body>
+    <center><h1>search</h1></center>
+
+    <form action="../php/search_results.php" method="get" class="search-form">
+        <label for="name">Title:</label>
+            <input type="text" id="name" name="Title" required> 
+            <br>
+            <br>
+        <input type="text" name="searchQuery" placeholder="write here">
+        <br>
+        <br>
+        <button type="submit">search</button>
+    </form>
+
+    <div class="search-results">
+        <?php include '/php/search_results.php'; ?>
+    </div>
+<header>
+   
+</header>
+<nav>
+   
+<div id="navbar">
+        <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="post.html">Add post</a></li>
+                <li><a href="Add comment.html">Add comment</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="signup.html">sign-up</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="logout.html">logout</a></li>
+            </ul>
+</div>
+    </nav>
+
+</body>
+
+
+</html>
+
+
+
+
+

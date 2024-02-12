@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.search-form {
+    margin-bottom: 20px;
+}
+
+.search-form input[type="text"] {
+    width: 400px;
+    height: 80px;
+    padding: 5px;
+}
+
+.search-form button {
+    height: 30px;
+    padding: 0 10px;
+}
+
+.search-results {
+    margin-top: 20px;
+}
+
+.search-results .post {
+    margin-bottom: 10px;
+}
+
+.search-results .post p {
+    margin: 0;
+}
+
+.search-results .post .timestamp {
+    font-size: 12px;
+    color: #888;
+}

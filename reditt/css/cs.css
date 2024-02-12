@@ -1,0 +1,117 @@
+body{
+    background-color: antiquewhite;
+}
+
+
+h1{
+     color: rgb(214, 98, 143);
+     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     font-size: 57px;
+}
+#navbar {
+    background-color: rgb(198, 201, 204);
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+
+#navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#navbar ul li {
+    display: inline;
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    color: rgb(158, 101, 123);
+    padding: 10px;
+    
+}
+
+#navbar h1 {
+    position: absolute;
+    top: -40px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    color: rgb(158, 101, 123);}
+
+.content{
+    margin-left:15px;
+
+    }
+    .content h2{
+        font-size: 40px;
+    }
+    .content p{
+        font-size:20px;
+    }
+    .login h2{
+        
+        font-size: 20px;
+        text-align: center;
+        padding: 4px;
+
+
+    }
+    .login{
+      
+        font-family:'Times New Roman', Times, serif;
+        font-size:15px;
+        background-color: rgb(198, 201, 204);      
+          border-radius: 40px;
+          border-style:groove;
+        padding: 80px;
+        text-align: center;
+    }
+    
+    main{
+        padding-left: 50px;
+        padding: 60px;
+    }
+    .video-container {
+        text-align: left;
+    }
+    
+    .video-container video {
+        width: 400px;
+        height: auto;
+    }
+    .photo-container  {
+        text-align: left;
+    }
+    
+    .photo-container img {
+        width: 400px;
+        height: auto;
+    }
+    footer{
+        text-align: center;
+        font-size: 30px;
+    }
+    .social-icons {
+        text-align: center;
+        margin-top: 20px;
+      }
+      
+      .social-icons a {
+        display: inline-block;
+        margin: 0 10px;
+        font-size: 24px;
+      }
+
+      
