@@ -38,7 +38,7 @@ $conn->close();
 
 <h3>Update Data</h3>
 
-<form method="POST" action="../php/update_info.php">
+<form method="POST" action="edit.php">
     <input type="text" name="username" value="<?php echo $user->getUsername() ?>" placeholder="Enter Username" required>
     <input type="password" name="password" placeholder="Enter New Password" required>
     <input type="email" name="email" value="<?php echo $user->getEmail() ?>" placeholder="Enter New Email" required>

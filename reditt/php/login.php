@@ -4,7 +4,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "../php/User.php";
 
     
     if (isset($_POST['username'])) {
-
+        
         $username = $_POST['username'];
       //  echo "<p>Welcome, $username!</p>";
         echo "<p>This is the welcome page for registered users.</p>";
@@ -47,7 +47,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "../php/User.php";
             <main>
         <div class="login">
             <h2>Login</h2>
-            <form method="POST" action="../php/User.php">
+            <form method="POST" action="../php/login.php">
               <label for="username">Username:</label>
               <input type="text" id="username" name="username">
               <br>
