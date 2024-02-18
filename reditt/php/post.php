@@ -43,58 +43,56 @@ $db = new PDO("mysql:host=localhost;dbname=social","root", "");
 
 ?>
 
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
-     <head>
-         <meta charset="UTF-8"> 
-         <title>Social</title> 
-         <link rel="stylesheet" href="../css/cs.css">
-          <link rel="stylesheet" type="text/css" href="../css/post.css"> 
-          <link rel="icon" href="../photo/logo.jpeg">
-         </head>
-          <body>
-             <header> <center><h1>posts</h1></center> </header>
+    <head>
+        <meta charset="UTF-8">
+        <title >Social</title>
+    <link rel="stylesheet"  href="../css/cs.css">
+    <link rel="stylesheet" type="text/css" href="../css/post.css">
+    <link rel="icon"  href="../photo/logo.jpeg">
+    </head>
+    
+</head>
+  
+<body>
+    <header>
+    <center><h1>posts</h1></center>
+    </header>
 
-<div class="comment-form">
-    <h3>Add post</h3>
+    <div class="comment-form">
+        <h3>Add post</h3>
 
     <div class="post-form">
-        <form action="process_post.php" method="post">
-            <textarea name="postText" placeholder="اكتب مشاركتك هنا"></textarea>
-            <button type="submit">نشر</button>
+        <form action="../php/process_post.php" method="post">
+            <textarea name="postText" placeholder="write your Post"></textarea>
+            <button type="submit">to publish </button>
         </form>
     </div>
+        
+   
 
     <div class="post-container">
-        <?php
-        // قم بالاتصال بقاعدة البيانات
-        $db = new PDO("mysql:host=localhost;dbname=social", "root", "");
-
-        // استعلام SQL لاسترداد المشاركات
-        $query = "SELECT * FROM posts";
-        $stmt = $db->prepare($query);
-        $stmt->execute();
-        $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        // عرض المشاركات
-        foreach ($posts as $post) {
-            echo "<p>" . $post['postText'] . "</p>";
-        }
-        ?>
+        <?php include '/php/process_post.php'; ?>
     </div>
 
-    <nav>
-        <div id="navbar">
-            <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="post.html">Add post</a></li>
-            <li><a href="Add comment.html">Add comment</a></li>
-            <li><a href="search.html">search</a></li>
-            <li><a href="signup.html">sign-up</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="logout.html">logout</a></li>
+<nav>
+    
+<div id="navbar">
+        <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="post.html">Add post</a></li>
+                <li><a href="Add comment.html">Add comment</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="signup.html">sign-up</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="logout.html">logout</a></li>
             </ul>
-        </div>
-    </nav>
 </div>
-</body> </html>
+    </nav>
+
+
+
+
+</body>
+</html>

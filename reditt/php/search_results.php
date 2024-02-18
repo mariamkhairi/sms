@@ -1,19 +1,38 @@
-//هذه الصفحة تقوم بالبحت باستخدام اليوزر او الفئة او العنوان عن المنشورات //
-<?php
+//هذه الصفحة تقوم بالبحت عن المنشورات باستخدام اليوزر او الفئة او العنوان
+  <?php
 require_once $_SERVER["DOCUMENT_ROOT"] . "../reditt/Database/Database.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "../reditt/php/post.php";
-// استعلام قاعدة البيانات للحصول على المشاركات
-$db = new Database();
-$connection = $db->getConnection();
-
 if (isset($_GET['searchQuery'])) {
     $searchQuery = $_GET['searchQuery'];
 
-    // استعلام قاعدة البيانات للبحث عن المشاركات
-    $query = "SELECT * FROM posts WHERE username LIKE '%$searchQuery%' OR category LIKE '%$searchQuery%' OR title LIKE '%$searchQuery%'";
-    $statement = $connection->prepare($query);
-    $statement->execute();
-    $searchResults = $statement->fetchAll(PDO::FETCH_ASSOC);
+    // سيتم البحت هنا عن المعلومات المطلوبه متل المنشور 
+
+
+    $posts = [
+        [
+            'title' => 'منشور 1',
+            'content' => '  المحتوى الخاص بمنشور 1.',
+            'timestamp' => '2022-01-01 10:00:00'
+        ],
+        [
+            'title' => 'منشور 2',
+            'content' => ' المحتوى الخاص بمنشور 2.',
+            'timestamp' => '2022-01-02 12:00:00'
+        ],
+        [
+            'title' => 'منشور 3',
+            'content' => ' المحتوى الخاص بمنشور 3.',
+            'timestamp' => '2022-01-03 14:00:00'
+        ]
+    ];
+
+
+    $searchResults = [];
+
+    foreach ($posts as $post) {
+        if (stripos($post['title'], $searchQuery) !== false || stripos($post['content'], $searchQuery) !== false) {
+            $searchResults[] = $post;
+        }
+    }
 
     if (empty($searchResults)) {
         echo '<p>لا توجد نتائج للبحث.</p>';
@@ -23,7 +42,4 @@ if (isset($_GET['searchQuery'])) {
         }
     }
 }
-
-// قم بإغلاق اتصال قاعدة البيانات بعد الانتهاء من الاستعلام
-$connection = null;
 ?>
